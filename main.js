@@ -4,6 +4,7 @@
 //3. You can udpdate the values inside the *newsList variable if you want but do not change the variable name
 //4. Happy coding :)
 
+
 //newsList is the variable that holds an array of strings
 export var newsList = [
   "What films should an aspiring journalist watch?",
@@ -18,18 +19,26 @@ export var newsList = [
 
 export function search() {
   //inputValue is the variable that contains the search string
-  const inputValue = document.getElementById("search-input").value;
+  let inputValue = document.getElementById("search-input").value.toLowerCase();
+  let x = newsList
 
-  //Write your code here for the search function
-
-  return newsList;
+  //Write your code here for the search function 
+  for (var i = 0; i < x.length; i++) {     
+    if (x[i].toLowerCase().includes(inputValue)){
+      console.log(x[i])
+    }
+  }
+    return newsList;
 }
-
 export function sort(type) {
   if (type == "ascending") {
     //Write your code here for sorting (ascending)
-  } else {
+    
+    newsList.sort()
+  } else{
     //Write your code here for sorting (descending)
+    let r = newsList.sort()
+    r.reverse()
   }
 
   return newsList;

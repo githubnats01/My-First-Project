@@ -33,3 +33,4 @@ function reloadDOM(newArray) {
     document.getElementById("news-list-container").innerHTML = constructedDOM;
   }
 }
+
