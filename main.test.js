@@ -1,17 +1,20 @@
-import { sort, newsList } from "./main.js";
+import { sort, newsList} from "./main.js";
 
 function search(inputValue) {
   //inputValue is the variable that contains the search string
   //let inputValue = document.getElementById("search-input").value.toLowerCase();
-  let x = newsList
-
+  var selectNews = []
+  var x = 0
   //Write your code here for the search function 
-  for (var i = 0; i < x.length; i++) {     
-    if (x[i].toLowerCase().includes(inputValue)){
-      console.log(x[i])
+  for (var i = 0; i < newsList.length; i++) {     
+    var result = newsList[i].toLowerCase().match(inputValue);
+    if((result != null) || (result != undefined)){
+      selectNews[x] = newsList[i]
+      x++
     }
   }
-    return newsList;
+  //newsList=selectNews
+  return newsList;
 }
 
 //Example testing for search function

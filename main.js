@@ -5,6 +5,9 @@
 //4. Happy coding :)
 
 
+
+
+
 //newsList is the variable that holds an array of strings
 export var newsList = [
   "What films should an aspiring journalist watch?",
@@ -17,19 +20,30 @@ export var newsList = [
   "Marie Colvin shined a light on war-torn corners of the world",
 ];
 
+
 export function search() {
   //inputValue is the variable that contains the search string
   let inputValue = document.getElementById("search-input").value.toLowerCase();
-  let x = newsList
-
-  //Write your code here for the search function 
-  for (var i = 0; i < x.length; i++) {     
-    if (x[i].toLowerCase().includes(inputValue)){
-      console.log(x[i])
-    }
-  }
-    return newsList;
+  var selectNews = []
+  var x = 0
+  
+  // Write your code here for the search function 
+  
+      for (var i = 0; i < newsList.length; i++) {     
+        var result = newsList[i].toLowerCase().match(inputValue);
+        if((result != null) || (result != undefined)){
+          selectNews[x] = newsList[i]
+          x++
+        }
+      }
+      newsList=selectNews
+      return newsList;
 }
+
+
+
+
+
 export function sort(type) {
   if (type == "ascending") {
     //Write your code here for sorting (ascending)

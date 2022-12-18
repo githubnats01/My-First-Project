@@ -1,4 +1,4 @@
-import { sort, search, newsList } from "../../main.js";
+import { sort, search, newsList} from "../../main.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   reloadDOM(newsList);
